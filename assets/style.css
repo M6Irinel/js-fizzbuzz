@@ -1,0 +1,83 @@
+
+/* VARIABLE */
+:root {
+    --body_color: #083b4c;
+    --item_color: #1389b2;
+    --fizzbuzz_color: #f0466f;
+    --fizz_color: #0cd6a1;
+    --buzz_color: #ffd166;
+    --transition_time: 0.2s;
+}
+
+/* THE REST */
+
+body {
+    background-color: var(--body_color);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+.container {
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ITEM DEFAULT =========================*/
+
+.item {
+    flex-basis: calc((100% / 5) - (10px * 2));
+    margin: 10px;
+    aspect-ratio: 1;
+    background-color: var(--item_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 2px;
+    transition: box-shadow var(--transition_time), transform var(--transition_time);
+}
+
+.item:hover {
+    box-shadow: 0 0 10px black;
+    transform: scale(1.02);
+}
+
+/* ITEM FIZZ AND BUZZ ==================*/
+
+.item.fizz_buzz {
+    background-color: var(--fizzbuzz_color);
+}
+
+.item.fizz {
+    background-color: var(--fizz_color);
+}
+
+.item.buzz {
+    background-color: var(--buzz_color);
+}
+
+/* MEDIA =====================================*/
+
+@media screen and (min-width: 768px) {
+    .item {
+        flex-basis: calc((100% / 7) - 20px);
+        font-size: 1.2rem;
+    }
+}
+
+/* SCROLL BAR ================================*/
+
+::-webkit-scrollbar {
+    appearance: none;
+}
+
+::-webkit-scrollbar-thumb {
+    appearance: none;
+    background-color: var(--item_color);
+    border: 5px solid var(--body_color);
+    border-radius: 20px;
+
+}
